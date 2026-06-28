@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101214">
+  <title>FIFA 26 World Cup Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ongoing FIFA 26 knockout predictor</p>
+        <h1>World Cup Winner Predictor</h1>
+      </div>
+      <div class="toolbar" aria-label="Bracket actions">
+        <button id="randomBtn" class="tool-button" type="button">Random picks</button>
+        <button id="resetBtn" class="tool-button danger" type="button">Reset</button>
+      </div>
+    </header>
+
+    <section class="bracket-board" aria-label="World Cup knockout bracket">
+      <section class="half half-left" aria-labelledby="leftTitle">
+        <div class="half-header">
+          <h2 id="leftTitle">Finalist Path A</h2>
+          <span>Round of 32 to semi-final</span>
+        </div>
+        <div id="leftBracket" class="bracket-side left-side"></div>
+      </section>
+
+      <section class="final-zone" aria-label="Final, champion, and third place">
+        <article class="champion-panel">
+          <div class="cup" aria-hidden="true"></div>
+          <p>Champion</p>
+          <h2 id="championName">Awaiting final</h2>
+        </article>
+
+        <article class="central-match">
+          <div class="match-kicker">Final · Jul 19</div>
+          <div id="finalMatch" class="central-teams"></div>
+        </article>
+
+        <article class="central-match bronze">
+          <div class="match-kicker">Bronze final · Jul 19</div>
+          <div id="bronzeMatch" class="central-teams"></div>
+        </article>
+      </section>
+
+      <section class="half half-right" aria-labelledby="rightTitle">
+        <div class="half-header">
+          <h2 id="rightTitle">Finalist Path B</h2>
+          <span>Semi-final to round of 32</span>
+        </div>
+        <div id="rightBracket" class="bracket-side right-side"></div>
+      </section>
+    </section>
+  </main>
+
+  <template id="matchTemplate">
+    <article class="match-card">
+      <div class="match-meta"></div>
+      <div class="teams"></div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
